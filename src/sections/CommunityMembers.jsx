@@ -36,12 +36,14 @@ export default function CommunityMembers({ onViewAllMembers, onOpenJoinModal }) 
             A diverse community of learners, builders and professionals.
           </p>
 
-          {/* 6 Members Grid (Desktop: 6 in 1 row; Mobile: 2 or 3 per row) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-6 lg:gap-8 justify-items-center pt-6">
+         <div className="members-width flex justify-center items-center">
+           {/* 6 Members Grid (Desktop: 6 in 1 row; Mobile: 2 or 3 per row) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-4 lg:gap-6 w-[100%] sm:w-[80%] mx-auto items-center justify-items-center pt-6">
             {membersData.map((member) => (
               <MemberAvatar key={member.id} member={member} />
             ))}
           </div>
+         </div>
 
         </div>
 

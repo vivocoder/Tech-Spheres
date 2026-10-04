@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './sections/Footer';
 import Home from './pages/Home';
 import JoinModal from './components/JoinModal';
-import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
+// import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 
 export default function App() {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function App() {
       <Footer />
 
       {/* WhatsApp Floating Action Button */}
-      <WhatsAppFloatingButton />
+      {/* <WhatsAppFloatingButton /> */}
 
       <JoinModal
         isOpen={isJoinModalOpen}

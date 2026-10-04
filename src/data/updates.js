@@ -6,7 +6,7 @@ export const updatesData = [
     title: "New Members from Udgir",
     description: "We're happy to welcome new members to the community!",
     timeAgo: "2 days ago",
-    iconType: "users"
+    iconType: "users",
   },
   {
     id: 2,
@@ -15,15 +15,18 @@ export const updatesData = [
     title: "Tech Community Meetup",
     description: "Planning our first meetup in October 2026 at Udgir.",
     timeAgo: "5 days ago",
-    iconType: "calendar"
+    iconType: "calendar",
   },
   {
     id: 3,
-    tag: "News",
+    tag: "Careers",
     tagColor: "brown",
-    title: "New Initiatives Coming Soon",
-    description: "Stay tuned for learning sessions, workshops and collaborations.",
-    timeAgo: "1 week ago",
-    iconType: "megaphone"
-  }
+    title: "Careers Page Directory",
+    description:
+      "Company names and direct career page links, in one sheet we keep updating.",
+    timeAgo: "New",
+    iconType: "briefcase",
+    href: "https://docs.google.com/spreadsheets/d/15l38UEyoknNgl_flhU7v-PLAR7Lk1kPrvjuoZf40tuk/edit?gid=0#gid=0",
+    buttonText: "View the Sheet",
+  },
 ];

@@ -1,56 +1,43 @@
 export const membersData = [
   {
     id: 1,
-    name: "Sajid Momin",
-    role: "Frontend Developer",
-    avatar: "/images/members/sajid.jpg",
-    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Sajid+Momin",
-    experience: "3+ Years",
-    tag: "Co-Founder"
+    name: "Mohammad Suhail",
+    role: "Database Engineer",
+    avatar: "/images/members/Mohammad_Suhail.png",
+    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Suhail",
+    experience: "4+ Years",
+    tag: "Co-Founder",
+    href: "https://in.linkedin.com/in/suhail3257",
   },
   {
     id: 2,
-    name: "Suhail",
-    role: "Software Developer",
-    avatar: "/images/members/suhail.jpg",
-    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Suhail",
-    experience: "4+ Years",
-    tag: "Co-Founder"
+    name: "Suhail Shaikh",
+    role: "SAP ABAP Developer",
+    avatar: "/images/members/Suhail_shaikh.png",
+    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Sajid+Momin",
+    experience: "3+ Years",
+    tag: "Co-Founder",
+    href: "https://www.linkedin.com/in/malik-suhail-shaikh-02a803428/",
   },
+
   {
     id: 3,
-    name: "Ayesha",
-    role: "MCA Student",
-    avatar: "/images/members/ayesha.jpg",
-    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Ayesha",
-    experience: "Student",
-    tag: "Learner"
+    name: "Sajid Momin",
+    role: "Frontend Developer",
+    avatar: "/images/members/Sajid_Momin.png",
+    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Sajid+Momin",
+    experience: "2+ Years",
+    tag: "Mentor",
+    href: "https://in.linkedin.com/in/sajid-momin-18411622b/",
   },
   {
     id: 4,
-    name: "Rahul",
-    role: "Backend Developer",
-    avatar: "/images/members/rahul.jpg",
+    name: "Ashwini Choudhary",
+    role: "Financial associate",
+    avatar: "/images/members/Ashwini_Choudhary.png",
     fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Rahul",
     experience: "2+ Years",
-    tag: "Builder"
+    tag: "Builder",
+    href: "https://www.linkedin.com/in/ashwini-choudhary-07329a205/",
   },
-  {
-    id: 5,
-    name: "Simran",
-    role: "UI/UX Designer",
-    avatar: "/images/members/simran.jpg",
-    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Simran",
-    experience: "3+ Years",
-    tag: "Designer"
-  },
-  {
-    id: 6,
-    name: "Arman",
-    role: "IT Professional",
-    avatar: "/images/members/arman.jpg",
-    fallback: "https://placehold.co/400x400/EFE6DC/795537?text=Arman",
-    experience: "5+ Years",
-    tag: "Mentor"
-  }
 ];

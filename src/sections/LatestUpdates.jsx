@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users2, Calendar, Megaphone, ArrowRight } from 'lucide-react';
+import { Users2, Calendar, Megaphone, ArrowRight, Briefcase } from 'lucide-react';
 import { updatesData } from '../data/updates';
 
 export default function LatestUpdates({ onViewAll }) {
@@ -11,6 +11,8 @@ export default function LatestUpdates({ onViewAll }) {
         return <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#9E6738] stroke-[2]" />;
       case 'megaphone':
         return <Megaphone className="w-4 h-4 sm:w-5 sm:h-5 text-[#9E6738] stroke-[2]" />;
+      case 'briefcase':
+        return <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-[#9E6738] stroke-[2]" />;
       default:
         return <Users2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#9E6738] stroke-[2]" />;
     }
@@ -37,7 +39,7 @@ export default function LatestUpdates({ onViewAll }) {
 
         </div>
 
-        {/* 3 Updates Cards Grid */}
+        {/* 3 Updates Cards Grid (Responsive: 1 col on mobile, 3 cols on desktop) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {updatesData.map((update) => (
             <div
@@ -57,16 +59,43 @@ export default function LatestUpdates({ onViewAll }) {
 
                 {/* Card Title */}
                 <h3 className="text-lg sm:text-xl font-bold text-[#17212B] font-heading mb-2 leading-snug group-hover:text-[#9E6738] transition-colors">
-                  {update.title}
+                  {update.href ? (
+                    <a
+                      href={update.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#9E6738] transition-colors"
+                    >
+                      {update.title}
+                    </a>
+                  ) : (
+                    update.title
+                  )}
                 </h3>
 
                 {/* Card Description */}
                 <p 
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  className="text-sm text-[#66717A] font-normal leading-relaxed mb-6"
+                  className={`text-sm text-[#66717A] font-normal leading-relaxed ${update.href ? 'mb-4' : 'mb-6'}`}
                 >
                   {update.description}
                 </p>
+
+                {/* View Sheet Button */}
+                {update.href && (
+                  <div className="mb-5 pt-1">
+                    <a
+                      href={update.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-[#9E6738] hover:bg-[#885427] active:scale-[0.98] text-white text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer group/btn"
+                    >
+                      <span>{update.buttonText || "View the Sheet"}</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* Bottom Row: Time and Circular Icon Badge */}
