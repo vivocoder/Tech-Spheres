@@ -4,7 +4,7 @@ import StatsTicker from "../sections/StatsTicker";
 import WhyCommunity from "../sections/WhyCommunity";
 import Founders from "../sections/Founders";
 import LatestUpdates from "../sections/LatestUpdates";
-import UpcomingEvent from "../sections/UpcomingEvent";
+// import UpcomingEvent from "../sections/UpcomingEvent";
 import CommunityMembers from "../sections/CommunityMembers";
 import NearbyCommunities from "../sections/NearbyCommunities";
 import ConnectedGallery from "../sections/ConnectedGallery";
@@ -13,7 +13,7 @@ import JoinCommunity from "../sections/JoinCommunity";
 import FinalCTA from "../sections/FinalCTA";
 import JoinModal from "../components/JoinModal";
 
-export default function Home({ onOpenJoinModal }) {
+export default function Home({ onOpenJoinModal, onOpenEventPopup }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpenJoin = () => {
@@ -36,7 +36,7 @@ export default function Home({ onOpenJoinModal }) {
       {/* Hero Section */}
       <Hero
         onJoinClick={handleOpenJoin}
-        onEventsClick={() => handleScrollToSection("events")}
+        onEventsClick={onOpenEventPopup || (() => handleScrollToSection("events"))}
       />
 
       {/* Sliding Marquee Stats Ticker */}
@@ -49,10 +49,10 @@ export default function Home({ onOpenJoinModal }) {
       <Founders />
 
       {/* Latest Updates Section */}
-      <LatestUpdates onViewAll={() => handleScrollToSection("events")} />
+      <LatestUpdates onViewAll={onOpenEventPopup || (() => handleScrollToSection("events"))} />
 
       {/* Our Next Event Section */}
-      <UpcomingEvent onViewAllEvents={() => handleScrollToSection("events")} />
+      {/* <UpcomingEvent onViewAllEvents={onOpenEventPopup || (() => handleScrollToSection("events"))} /> */}
 
       {/* Community Members Section */}
       <CommunityMembers onOpenJoinModal={handleOpenJoin} />

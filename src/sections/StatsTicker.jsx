@@ -72,8 +72,8 @@ const InfinityIcon = ({ className = "w-5 h-5" }) => (
 
 export default function StatsTicker() {
   const stats = [
-    { value: '500+', label: 'Members', icon: MembersIcon },
-    { value: '10+', label: 'Events', icon: EventsIcon },
+    { value: '+', label: 'Members are Joining Day by Day', icon: MembersIcon },
+    { value: '1', label: 'Organizing Tech Meetup', icon: EventsIcon },
     { value: '1', label: 'Community', sub: 'Udgir', icon: CommunityHeartIcon },
     { value: '∞', label: 'Opportunities', icon: InfinityIcon },
   ];

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, Search } from 'lucide-react';
 import Button from './Button';
 
-export default function Navbar({ onOpenJoinModal }) {
+export default function Navbar({ onOpenJoinModal, onOpenEventPopup }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -68,8 +68,16 @@ export default function Navbar({ onOpenJoinModal }) {
           </nav>
 
           {/* Right Actions */}
-          <div className="hidden md:flex items-center gap-3.5">
-           
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={onOpenEventPopup}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F5EEE6] hover:bg-[#E8D8C7] text-[#956B47] text-xs font-semibold tracking-wide border border-[#E8D8C7] transition-all duration-200 cursor-pointer shadow-2xs hover:scale-105 active:scale-95"
+            >
+              <span className="w-2 h-2 rounded-full bg-blue animate-pulse"></span>
+              <span>Event 2026</span>
+            </button>
+
             <Button
               variant="primary"
               size="sm"
@@ -83,6 +91,14 @@ export default function Navbar({ onOpenJoinModal }) {
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={onOpenEventPopup}
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F5EEE6] text-[#956B47] text-[11px] font-bold border border-[#E8D8C7]"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-blue animate-pulse"></span>
+              <span>Summit</span>
+            </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -114,7 +130,18 @@ export default function Navbar({ onOpenJoinModal }) {
               </a>
             ))}
           </nav>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenEventPopup();
+              }}
+              className="w-full inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-[5px] bg-[#F5EEE6] text-[#956B47] text-sm font-semibold border border-[#E8D8C7]"
+            >
+              <span className="w-2 h-2 rounded-full bg-blue animate-pulse"></span>
+              <span>TechSphere Event 2026</span>
+            </button>
             <Button
               variant="primary"
               size="md"
